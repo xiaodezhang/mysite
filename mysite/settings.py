@@ -34,6 +34,7 @@ INSTALLED_APPS = [
     'note',
     'blog',
     'dic',
+    'mysite',
     'django.contrib.admin',
     'django.contrib.auth',
     'django.contrib.contenttypes',
