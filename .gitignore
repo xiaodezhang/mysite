@@ -8,3 +8,4 @@ migrations
 *sw[onmp]
 *.sqlite3
 env/
+static/
