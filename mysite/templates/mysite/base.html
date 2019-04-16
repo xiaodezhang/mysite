@@ -1,0 +1,37 @@
+<!doctype html>
+<html lang="en">
+  <head>
+	  {% load static %}
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <meta name="description" content="">
+    <meta name="author" content="">
+
+    <title>张小德</title>
+
+    <!-- Bootstrap core CSS -->
+    <link href="{% static 'mysite/css/bootstrap.min.css' %}" rel="stylesheet" >
+  </head>
+
+  <body class="bg-light">
+
+    {% block content %}{% endblock %}
+
+   <!-- Bootstrap core JavaScript
+    ================================================== -->
+    <!-- Placed at the end of the document so the pages load faster -->
+    <script src="{% static 'mysite/js/vendor/jquery-slim.min.js' %}"></script>
+    <script src="{% static 'mysite/js/vendor/popper.min.js' %}"></script>
+    <script src="{% static 'mysite/js/bootstrap.min.js' %}"></script>
+    <script src="{% static 'mysite/js/vendor/holder.min.js' %}"></script>
+    {% block load_js %}
+    {% endblock %}
+    <script>
+      Holder.addTheme('thumb', {
+        bg: '#55595c',
+        fg: '#eceeef',
+        text: 'Thumbnail'
+      });
+   </script>
+  </body>
+</html>
