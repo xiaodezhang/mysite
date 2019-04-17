@@ -1,8 +1,22 @@
 import markdown2
-html = markdown2.markdown_path("note/templates/note/note.md")
+import os
 
-s = open("note/templates/note/index.html").read()
-s = s.replace('{% md "note.md" %}',html)
-f = open("note/templates/note/index.html",'w')
-f.write(s)
-f.close()
+app_name = ["note","dic","blog"]
+for name in app_name:
+    md_file = name+"/templates/"+name+"/"+name+".md"
+    index_file = name+"/templates/"+name+"/index.html"
+    index_cache_file = name+"/templates/"+name+"/index_cache"
+
+    html = markdown2.markdown_path(md_file)
+    print(name+":"+html)
+    if os.path.isfile(index_cache_file):
+        s_cache = open(index_cache_file).read()
+    else:
+        s_cache = open(index_file).read()
+    s = s_cache.replace('{% md "'+name+'.md" %}',html)
+    f_cache = open(index_cache_file,'w')
+    f = open(index_file,'w')
+    f_cache.write(s_cache)
+    f.write(s)
+    f_cache.close()
+    f.close()

@@ -9,3 +9,4 @@ migrations
 *.sqlite3
 env/
 static/
+*_cache

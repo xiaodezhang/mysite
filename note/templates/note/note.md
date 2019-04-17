@@ -6,7 +6,7 @@ My Note
 2. 数论
 3. 金融基础
 4. latex
-5. mygit
+5. mygi
 6. markdon
 7. sqlite
 
@@ -43,23 +43,24 @@ My Note
  `pip install -r requirements.txt`  
 
 
-DIC
-===
----
-
-## 2019-04-16
+## 2019-04-17
 
 ---
 
-### 13:19
-  * miscellaneous
-  * reinvent,invent
-  * forum
-  * moderate
-  * severity
-  * vulnerable
-  * inheritance
+### 10:35
+  使用markdown2.py作为脚本的导入库，没有成功将包含中文字符的uft-8解析,  
+  实际上源文件是对编码进行处理的，直接使用python read读取这个文件，也报错  
+  这说明编码错误并非是markdown2.py这个脚本造成的。  
+  另外我们知道python3是默认unicode的。这真是让人感到困扰。  
+  另一方面，使用外部程序运行python -m filename.md > filename.html  
+  能够获得正确的结果。所有我尝试在我的python脚本中调用外部程序，结果不能运行，  
+ `os.sys("python -m markdown2 note/templates/note/note.md > note/templates/note/note.html")`  
+ 使用前者的参数列表的方式[],和subprocess的两种方式均不能成功，我有点讨厌python了。  
+ 总之，虽然是一个简单的需求，但是因为不了解python，产生了很多的困扰呢。  
+ 可能跟virtualenv存在关系吧？？  
+[tag]:<>(markdown,markdown2,markdown2.py,python,unicode,uft-8)  
 
-
-
-
+### 11:10
+  在linux下运行正常，这些软件总的来说在windows下都不是原生的，存在问题应该是正常的吧？？  
+### 13:48
+  the content of my site should be removed from git.
