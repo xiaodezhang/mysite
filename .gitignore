@@ -10,3 +10,6 @@ migrations
 env/
 static/
 *_cache
+blog.md
+dic.md
+note.md
