@@ -6,7 +6,7 @@ My Note
 2. 数论
 3. 金融基础
 4. latex
-5. mygi
+5. mygit
 6. markdon
 7. sqlite
 

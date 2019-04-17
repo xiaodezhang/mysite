@@ -8,7 +8,6 @@ for name in app_name:
     index_cache_file = name+"/templates/"+name+"/index_cache"
 
     html = markdown2.markdown_path(md_file)
-    print(name+":"+html)
     if os.path.isfile(index_cache_file):
         s_cache = open(index_cache_file).read()
     else:
