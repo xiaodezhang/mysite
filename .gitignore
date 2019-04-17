@@ -8,7 +8,6 @@ migrations
 *sw[onmp]
 *.sqlite3
 env/
-static/
 *_cache
 blog.md
 dic.md
