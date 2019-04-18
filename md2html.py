@@ -1,7 +1,8 @@
 import markdown2
 import os
 
-app_name = ["note","dic"]
+#app_name = ["note","dic"]
+app_name = ["note","dic","mysite"]
 #app_name = ["note","dic","blog"]
 for name in app_name:
     md_file = name+"/templates/"+name+"/"+name+".md"
