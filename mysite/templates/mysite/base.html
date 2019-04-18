@@ -11,6 +11,11 @@
 
     <!-- Bootstrap core CSS -->
     <link href="{% static 'mysite/css/bootstrap.min.css' %}" rel="stylesheet" >
+    <!-- Custom fonts for this template -->
+    <link href="{% static 'blog/css/all.min.css' %}" rel="stylesheet" type="text/css">
+    <!-- Custom styles for this template -->
+    <link href="{% static 'blog/css/clean-blog.min.css' %}" rel="stylesheet">
+
     {% block link %}{% endblock %}
   </head>
 
@@ -59,6 +64,7 @@
     <!-- Placed at the end of the document so the pages load faster -->
     <script src="{% static 'mysite/js/jquery.slim.min.js' %}"></script>
     <script src="{% static 'mysite/js/bootstrap.min.js' %}"></script>
+    <script src="{% static 'blog/js/clean-blog.min.js' %}"></script>
     {% block load_js %}
     {% endblock %}
     </body>
