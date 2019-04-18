@@ -19,11 +19,8 @@ def update_md(sc):
         else:
             s_cache = open(index_file).read()
         s = s_cache.replace('{% md "'+name+'.md" %}',html)
-        f_cache = open(index_cache_file,'w')
         f = open(index_file,'w')
-        f_cache.write(s_cache)
         f.write(s)
-        f_cache.close()
         f.close()
     sch.enter(5,1,update_md,(sc,))
 sch.enter(5,1,update_md,(sc,))
