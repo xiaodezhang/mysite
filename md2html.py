@@ -11,7 +11,7 @@ def update_md(sc):
     for name in app_name:
         md_file = name+"/templates/"+name+"/"+name+".md"
         index_file = name+"/templates/"+name+"/index.html"
-        index_cache_file = name+"/templates/"+name+"/index_cache"
+        index_cache_file = name+"/templates/"+name+"/index_cache.html"
 
         html = markdown2.markdown_path(md_file)
         if os.path.isfile(index_cache_file):
