@@ -23,5 +23,5 @@ def update_md(sc):
         f.write(s)
         f.close()
     sch.enter(5,1,update_md,(sc,))
-sch.enter(5,1,update_md,(sc,))
+sch.enter(5,1,update_md,(sch,))
 sch.run()
