@@ -2,7 +2,33 @@
 {% load static %}
 
 {% block content %}
-	  <div class = "container">
-      {% md "dic.md" %}
-	  </div>
-{% endblock %}
+  <!-- Page Header -->
+  <header class="masthead" style="background-image: url('{% static "mysite/img/post-bg.jpg" %}')">
+    <div class="overlay"></div>
+    <div class="container">
+      <div class="row">
+        <div class="col-lg-8 col-md-10 mx-auto">
+          <div class="site-heading">
+            <h1>Mysite's Statement</h1>
+            <span class="subheading">A site serves for zhang-xiaode</span>
+          </div>
+        </div>
+      </div>
+    </div>
+  </header>
+
+  <!-- Post Content -->
+  <article>
+    <div class="container">
+      <div class="row">
+        <div class="col-lg-8 col-md-10 mx-auto">
+          {% md "note.md" %}
+        </div>
+      </div>
+    </div>
+  </article>
+
+  <hr>
+
+{% endblock content %}
+
