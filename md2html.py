@@ -15,11 +15,12 @@ def update_md(sc):
 
         html = markdown2.markdown_path(md_file)
         if os.path.isfile(index_cache_file):
-            s_cache = open(index_cache_file).read()
+            # we need to set the codings on windows
+            s_cache = open(index_cache_file,'r',encoding='utf-8').read()
         else:
-            s_cache = open(index_file).read()
+            s_cache = open(index_file,'r',encoding='utf-8').read()
         s = s_cache.replace('{% md "'+name+'.md" %}',html)
-        f = open(index_file,'w')
+        f = open(index_file,'w',encoding='utf-8')
         f.write(s)
         f.close()
     sch.enter(5,1,update_md,(sc,))
