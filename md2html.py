@@ -6,7 +6,7 @@ sch = sched.scheduler(time.time,time.sleep)
 
 def update_md(sc):
     #app_name = ["note","dic"]
-    app_name = ["note","dic","mysite"]
+    app_name = ["note","dic","mysite","blog"]
     #app_name = ["note","dic","blog"]
     for name in app_name:
         md_file = name+"/templates/"+name+"/"+name+".md"

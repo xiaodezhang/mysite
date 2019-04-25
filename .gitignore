@@ -8,9 +8,5 @@ migrations
 *sw[onmp]
 *.sqlite3
 env/
-blog.md
-dic.md
-note.md
-mysite.md
 *index.html
 static/
