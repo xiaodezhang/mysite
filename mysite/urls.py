@@ -27,4 +27,10 @@ urlpatterns = [
     path('dic/', include('dic.urls')),
     path('about/', views.index,name='about'),
     path('contact/', views.index,name='contact'),
+    path('download/', views.download,name='download'),
+    path('signin', views.signin),
+    path('signin_page', views.signin_page,name='signin_page'),
+    path('sign_out', views.sign_out,name='sign_out'),
+    path('help', views.sign_out,name='help'),
+    path('settings', views.sign_out,name='settings'),
 ]

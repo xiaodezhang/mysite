@@ -1,0 +1,26 @@
+{% extends "base.html" %}
+{% load static %}
+
+{% block content %}
+<div class="container py-5">
+  <div class="row my-5 py-5">
+    <div class="col-lg-6 d-none d-lg-block">
+      <img class="img-fluid" src="{% static 'mysite/img/signin.jpg'%}" alt="">
+    </div>
+    <div class="col-lg-6 col-md-12 my-auto">
+    <form class="mx-auto text-center" action = "/signin" method = "post" style="max-width:350px">
+     {% csrf_token %}
+      <h1 class="h3 mb-3 font-weight-normal text-white">Please sign in</h1>
+      <p>{{failed_message}}</p>
+      <label for="inputEmail" class="sr-only mb-3">Email address</label>
+      <input type="username" id="inputEmail" name = "username" class="form-control mb-3" placeholder="user name" required autofocus>
+      <label for="inputPassword" class="sr-only">Password</label>
+      <input type="password" name = "password" id="inputPassword" class="form-control mb-3" placeholder="Password" required>
+     <button class="btn btn-lg btn-primary btn-block" type="submit">Sign in</button>
+    </form>
+    </div>
+  </div>
+</div>
+
+{% endblock content %}
+

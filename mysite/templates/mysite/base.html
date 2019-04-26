@@ -16,10 +16,11 @@
     <!-- Custom styles for this template -->
     <link href="{% static 'blog/css/clean-blog.min.css' %}" rel="stylesheet">
 
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.8.1/css/all.css" integrity="sha384-50oBUHEmvpQ+1lW4y57PTFmhCaXp0ML5d60M1M7uH2+nqUivzIebhndOJK28anvf" crossorigin="anonymous">
     {% block link %}{% endblock %}
   </head>
 
-  <body class="bg-light">
+  <body class="{{body_color|default:"bg-white"}}">
   <!-- Navigation -->
   <nav class="navbar navbar-expand-lg navbar-light fixed-top" id="mainNav">
     <div class="container">
@@ -48,16 +49,28 @@
          <li class="nav-item">
             <a class="nav-link" href="{% url 'contact' %}">Contact</a>
          </li>
+         <li class="nav-item">
+            <a class="nav-link" href="{% url 'download' %}">Download</a>
+         </li>
         </ul>
       </div>
+    </div>
+    <a class="navbar-brand" href="{% url 'signin_page' %}" style="display:{{sign_display|default:"none"}};">SIGNIN</a>
+    <div class="dropdown" style="display:{{person_info_display|default:"block"}}">
+      <a class="nav-link dropdown-toggle" data-toggle="dropdown" href="#" role="button" aria-haspopup="true" aria-expanded="false"><i class="far fa-user"></i></a>
+        <div class="dropdown-menu dropdown-menu-right" >
+          <a class="dropdown-item" href="{% url 'help' %}">help</a>
+          <a class="dropdown-item" href="{% url 'settings' %}">Settings</a>
+          <a class="dropdown-item" href="{% url 'sign_out' %}">Sign Out</a>
+        </div>
     </div>
   </nav>
 
     {% block content %}{% endblock %}
 
     <footer class="footer text-center mt-5">
-    @ 2019 All rights reserved.
-    </footer
+      <h5>@ 2019 All rights reserved.</h5>
+    </footer>
 
    <!-- Bootstrap core JavaScript
     ================================================== -->
