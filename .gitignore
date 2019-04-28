@@ -9,4 +9,5 @@ migrations
 *.sqlite3
 env/
 *index.html
-static/
+/static/
+resource/

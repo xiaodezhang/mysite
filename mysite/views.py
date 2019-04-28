@@ -15,6 +15,7 @@ def download(request):
 def signin_page(request):
     return render(request,'mysite/signin.html',{'body_color':'bg-dark'})
 
+@csrf_protect
 def signin(request):
     """
     if request.method == 'POST':
