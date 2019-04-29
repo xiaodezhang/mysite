@@ -31,11 +31,28 @@
             </ul>
             <h2>my document collections</h2>
             {% if doc_list %}
-            <ul>
               {% for doc in doc_list %}
-              <li><a href="{{doc.urlpath}}">{{doc.name}}</a></li>
+              <div class="accordion"">
+                <div class="card">
+                  <div class="card-header"">
+                    <h2 class="mb-0">
+                      <button class="btn btn-link" type="button" data-toggle="collapse" data-target="#{{doc.name}}" aria-expanded="false">
+                        {{doc.name}}
+                      </button>
+                    </h2>
+                  </div>
+                  <div id="{{doc.name}}" class="collapse">
+                    <div class="card-body">
+                      <ul>
+                        {% for subdir_file in doc.subdir_files %}
+                        <li><a href="{%static subdir_file.urlpath %}">{{subdir_file.name}}</a></li>
+                        {% endfor%}
+                      </ul>
+                    </div>
+                  </div>
+                </div>           
+              </div>
               {% endfor %}
-            </ul>
             {% endif %}
           </div>
 

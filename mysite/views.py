@@ -4,16 +4,6 @@ from django.views.decorators.csrf import csrf_protect
 from django.templatetags.static import static
 import os
 
-def walklevel(some_dir, level=1):
-    some_dir = some_dir.rstrip(os.path.sep)
-    assert os.path.isdir(some_dir)
-    num_sep = some_dir.count(os.path.sep)
-    for root, dirs, files in os.walk(some_dir):
-        yield root, dirs, files
-        num_sep_this = root.count(os.path.sep)
-        if num_sep + level <= num_sep_this:
-            del dirs[:]
-
 # Create your views here.
 def index(request):
     return render(request,'mysite/index.html')
@@ -21,10 +11,16 @@ def download(request):
     if request.user.is_authenticated:
         doc_path = "."+static('mysite/resource/doc')
         doc_list = []
-        for _,items,_ in walklevel(doc_path):
-            if items:
-                for item in items:
-                    doc_list.append({'urlpath':'test','name':item})
+        for doc_dir in os.listdir(doc_path):
+            doc_path_full = doc_path+'/'+doc_dir
+            if os.path.isdir(doc_path_full):
+                subdir_file_dic = []
+                for subdir_file in os.listdir(doc_path+"/"+doc_dir):
+                    subdir_file_full = doc_path_full+"/"+subdir_file
+                    if os.path.isfile(subdir_file_full):
+#                        subdir_file_dic.append({'name':subdir_file,'urlpath':subdir_file})
+                        subdir_file_dic.append({'name':subdir_file,'urlpath':'mysite/resource/doc/'+doc_dir+"/"+subdir_file})
+                doc_list.append({'name':doc_dir,'subdir_files':subdir_file_dic})
         return render(request,'mysite/download.html',{"doc_list":doc_list})
     else:
         return redirect('signin_page')
