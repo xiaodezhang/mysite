@@ -23,12 +23,20 @@
         <div class="col-lg-8 col-md-10 mx-auto">
 
           <div>
-            <h2>common toos and configuration</h2>
+            <h2>common tools and configuration</h2>
             <ul>
               <li><a href="{% static 'mysite/resource/_vimrc' %}" download>vim configuration file</a></li>
               <li><a href="{% static 'mysite/resource/vim8.1.0139-x64.exe' %}" download>gvim-windows</a></li>
               <li><a href="{% static 'mysite/resource/aws-tokyo.pem' %}" download>aws</a></li>
             </ul>
+            <h2>my document collections</h2>
+            {% if doc_list %}
+            <ul>
+              {% for doc in doc_list %}
+              <li><a href="{{doc.urlpath}}">{{doc.name}}</a></li>
+              {% endfor %}
+            </ul>
+            {% endif %}
           </div>
 
         </div>

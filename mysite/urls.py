@@ -33,4 +33,5 @@ urlpatterns = [
     path('sign_out', views.sign_out,name='sign_out'),
     path('help', views.sign_out,name='help'),
     path('settings', views.sign_out,name='settings'),
+    path('doc_list', views.sign_out,name='doc_list'),
 ]
