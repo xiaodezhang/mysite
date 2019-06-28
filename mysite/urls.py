@@ -34,4 +34,5 @@ urlpatterns = [
     path('help', views.sign_out,name='help'),
     path('settings', views.sign_out,name='settings'),
     path('doc_list', views.sign_out,name='doc_list'),
+    path('friends', include('friends.urls')),
 ]

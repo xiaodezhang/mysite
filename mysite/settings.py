@@ -33,10 +33,11 @@ ALLOWED_HOSTS = ['127.0.0.1','xiaodezhang.org',
 # Application definition
 
 INSTALLED_APPS = [
+    'mysite',
     'note',
     'blog',
     'dic',
-    'mysite',
+    'friends',
     'django.contrib.admin',
     'django.contrib.auth',
     'django.contrib.contenttypes',
