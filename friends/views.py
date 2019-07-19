@@ -1,4 +1,5 @@
 from django.shortcuts import render
+from django.templatetags.static import static
 import os
 
 # Create your views here.
@@ -13,6 +14,7 @@ def index(request):
                 episode_name_full = video_path_full+"/"+episode_name
                 if os.path.isfile(episode_name_full):
                     episode_num = episode_name.split('_')
-                    episode.append({'episode':episode_num[1],'urlpath':'friends/videos'+video_dir+"/"+episode_name})
+                    episode.append({'name':episode_num[1],'urlpath':'friends/videos/'+video_dir+"/"+episode_name})
+                    print("path:"+'friends/videos/'+video_dir+"/"+episode_name)
             video_list.append({'section':video_dir,'episode':episode})
-    return render(request,'friends/video.html',{"video_list":video_list})
+    return render(request,'friends/videos.html',{"video_list":video_list})
